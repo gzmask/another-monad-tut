@@ -44,8 +44,7 @@
 
 (m-bind 1 (fn [a]
             (m-bind 2 (fn [b]
-                        (m-bind (+ a b) (fn [c]
-                                          (m-result c)))))))
+                        (m-result (+ a b))))))
 
 ;; What is a monad?
 (def identity-monad
@@ -71,6 +70,7 @@
   (+ a b))
 
 ;; https://github.com/clojure/algo.monads
+;; A minimalist monad library
 (require '[clojure.algo.monads :as m])
 
 (m/domonad m/identity-m
@@ -123,10 +123,10 @@
 ;; algo.m
 (m/domonad m/sequence-m
   [a (range 5)
-   b (list (inc a))]
+   b ((:m-result sequence-monad) (inc a))]
   (+ a b))
 
-;; feeling familiar again? you should be.
+;; feeling familiar again? you should be. Surprise! Clojure for is not a for loop!
 (for [a (range 5)
       b (range a)]
   (+ a b))
