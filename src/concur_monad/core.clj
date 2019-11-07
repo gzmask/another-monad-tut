@@ -15,13 +15,13 @@
 ;;         .-.           .-.
 ;;        /  |          /  |         What are monads?
 ;;        |  /          |  /         Why do we care as Clojurists?
-;;     .'\|.-; _     .'\|.-; _
+;;     .'\|.-; _     .'\|.-; _       Can we understand it without knowing those fancy types?
 ;;    /.-.;\  |\|   /.-.;\  |\|
 ;;    '   |'._/ `   '   |'._/ `
 ;;        |  \          |  \
 ;;        \  |          \  |
 ;;         '-'           '-'
-;; Disclaimer: I am not a cat person, so if asked cat questions, I will just say:
+;; Disclaimer: I am not a cat person, so if asked for definition, I can only say:
 ;;             Monads are just monoids in the category of endofunctors
 
 
@@ -132,9 +132,14 @@
   (+ a b))
 
 ;; Why do we care as Clojurists?
-;; Because Clojure is already full of it.
+;; It's everywhere. People are using it without knowing it.
+;; It gives structure to your code.
+;; It leverages the m-bind function to every step of your computation.
 
+;; How do I learn to use it?
+;; With a powerful REPL system like Clojure's, one can learn any language concepts. REPL this exercise and have fun!
 
-;; Many more:
+;; More:
 ;; Error monad: http://funcool.github.io/cats/latest/#exception
 ;; Monad transformers: https://github.com/khinsen/monads-in-clojure/blob/master/PART4.md
+;; This presentation: https://github.com/gzmask/another-monad-tut
