@@ -113,6 +113,7 @@
 (def sequence-monad
   {:m-result #(list %)
    :m-bind (fn [v f]
+             (println :v v)
              (flatten (map f v)))})
 
 (run-monad sequence-monad
@@ -140,6 +141,7 @@
 ;; With a powerful REPL system like Clojure's, one can learn any language concepts. REPL this exercise and have fun!
 
 ;; More:
-;; Error monad: http://funcool.github.io/cats/latest/#exception
+;; Error monad: http://funcool.github.io/cats/latest/#either
+;; Trial monad: http://funcool.github.io/cats/latest/#exception
 ;; Monad transformers: https://github.com/khinsen/monads-in-clojure/blob/master/PART4.md
 ;; This presentation: https://github.com/gzmask/another-monad-tut
